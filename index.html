@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massage Way - Design Mockups</title>
+    <link rel="stylesheet" href="shared/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .tagline {
+            font-size: 1.125rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .option-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .option-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .option-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .option-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1a1a1a;
+        }
+
+        .option-card.dark-theme {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .option-card.dark-theme h2 {
+            color: white;
+        }
+
+        .option-card.dark-theme p {
+            color: #bbb;
+        }
+
+        .option-card.dark-theme .btn {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        .option-card.dark-theme .btn:hover {
+            background: #f0f0f0;
+        }
+
+        @media (max-width: 640px) {
+            .header {
+                margin-bottom: 2rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .options-grid {
+                gap: 1.5rem;
+            }
+
+            .option-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">Massage Way Hendersonville</h1>
+            <p class="tagline">Design Mockups - Choose a Direction</p>
+        </div>
+
+        <div class="options-grid">
+            <a href="homepage-mocks/homepage-1.html" class="option-card">
+                <h2>Design Option 1</h2>
+                <p>Light, minimalist design with clean typography and spacious layouts. Modern and welcoming aesthetic.</p>
+                <span class="btn">View Option 1</span>
+            </a>
+
+            <a href="homepage-mocks/homepage-2.html" class="option-card dark-theme">
+                <h2>Design Option 2</h2>
+                <p>Dark, sophisticated design with elegant contrast and refined visual hierarchy. Contemporary and premium feel.</p>
+                <span class="btn">View Option 2</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

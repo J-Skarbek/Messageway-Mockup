@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craniosacral Massage - Massage Way Hendersonville</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+    <style>
+        /* Dark Theme Specific Styles */
+        body {
+            background: #0f0f0f;
+            color: #f5f5f5;
+        }
+
+        .nav-container {
+            background: rgba(15, 15, 15, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item a {
+            color: #f5f5f5;
+            position: relative;
+            padding-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .nav-item a:hover {
+            color: #aaa;
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f5f5f5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        .logo-link {
+            color: #f5f5f5;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .btn-book {
+            background: #f5f5f5;
+            color: #0f0f0f;
+            border: 2px solid #f5f5f5;
+            font-weight: 600;
+        }
+
+        .btn-book:hover {
+            background: #0f0f0f;
+            color: #f5f5f5;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: #f5f5f5;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            color: #aaa;
+            font-weight: 400;
+        }
+
+        .btn-primary {
+            background: #f5f5f5;
+            color: #0f0f0f;
+            border: 2px solid #f5f5f5;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #f5f5f5;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #f5f5f5;
+            border: 2px solid #f5f5f5;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+            color: #0f0f0f;
+        }
+
+        .section {
+            background: #0f0f0f;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:nth-child(even) {
+            background: #1a1a1a;
+        }
+
+        .section-header h2 {
+            color: #f5f5f5;
+        }
+
+        .section-header p {
+            color: #aaa;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f5f5f5;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: #222;
+        }
+
+        .card h3 {
+            color: #f5f5f5;
+        }
+
+        .card p {
+            color: #aaa;
+        }
+
+        .step {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f5f5f5;
+        }
+
+        .step-number {
+            color: #f5f5f5;
+            opacity: 0.3;
+        }
+
+        .step h3 {
+            color: #f5f5f5;
+        }
+
+        .step p {
+            color: #aaa;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f5f5f5;
+        }
+
+        .benefit-icon {
+            color: #f5f5f5;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: #f5f5f5;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer h3 {
+            color: #f5f5f5;
+        }
+
+        footer .footer-bottom {
+            border-top-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        footer ul li a {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        footer ul li a:hover {
+            color: #f5f5f5;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #f5f5f5;
+        }
+
+        .cta-section p {
+            color: #aaa;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #f5f5f5;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-wrapper">
+            <a href="../index.html" class="logo-link">Massage Way</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../homepage-mocks/homepage-2.html#about">About</a></li>
+                <li class="nav-item"><a href="../homepage-mocks/homepage-2.html#services">Services</a></li>
+                <li class="nav-item highlight"><a href="sub2a.html">Assisted Stretching</a></li>
+                <li class="nav-item highlight"><a href="sub2b.html">Craniosacral Massage</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#book" class="btn-book">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="service-tag">WELLNESS SERVICE</span>
+            <h1>Craniosacral Massage</h1>
+            <p class="subtitle">Best Massage For Stress & Tension</p>
+            <p style="color: #aaa; font-size: 1.05rem; line-height: 1.6; margin-top: 1.5rem;">
+                A gentle, therapeutic technique that focuses on the subtle rhythms of the craniosacral system—the membranes and fluids surrounding the brain and spinal cord. Unlike traditional massage that targets muscle tissue, craniosacral therapy works with the central nervous system to release tension, improve fluid flow, and support the body's natural healing processes.
+            </p>
+            <div class="cta-buttons" style="margin-top: 2rem;">
+                <a href="#book" class="btn-primary">Book Now</a>
+                <a href="../homepage-mocks/homepage-2.html" class="btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="section">
+        <div class="section-header">
+            <h2>What to Expect During Your Session</h2>
+            <p>A gentle journey toward relaxation and healing</p>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Initial Consultation</h3>
+                <p>The session typically begins with a brief chat. The licensed massage therapist may ask about your health history, any specific issues like headaches, stress, or neck pain, and what you're hoping to get out of the session.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Comfortable Setup</h3>
+                <p>You'll lie down on a massage table, fully clothed, usually on your back. The studio might have dim lighting, soft music, or a calming atmosphere to help you relax. Blankets or pillows may be offered for comfort.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Light Touch</h3>
+                <p>Unlike deep-tissue massage, craniosacral therapy uses very light pressure—often described as the weight of a nickel. The therapist places their hands on specific areas to assess and gently adjust the rhythm of your cerebrospinal fluid.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Subtle Sensations</h3>
+                <p>You might feel deeply relaxed, almost meditative. Some people notice warmth, tingling, or a sense of "release" in tense areas. Others might not feel much during the session but notice effects afterward.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Quiet & Stillness</h3>
+                <p>The licensed massage therapist works slowly and quietly, tuning into your body's natural rhythms and allowing deep healing to occur.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <h3>After Effects</h3>
+                <p>Post-massage, you might feel calm, lighter, or even slightly sleepy. Some report relief from tension, improved mood, or better alignment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Get It -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Is Craniosacral Massage Right For You?</h2>
+            <p>Ideal for those seeking deep relaxation and nervous system support</p>
+        </div>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Stress & Anxiety Relief</h3>
+                <p>Someone might choose a Craniosacral Massage to relieve stress and anxiety through gentle, calming techniques that work directly with your nervous system.</p>
+            </div>
+            <div class="card">
+                <h3>Chronic Pain & Headaches</h3>
+                <p>Effective for reducing chronic pain, particularly headaches and tension, through gentle pressure and nervous system regulation rather than forceful manipulation.</p>
+            </div>
+            <div class="card">
+                <h3>Recovery & Wellness</h3>
+                <p>Its gentle approach helps calm the nervous system, release tension, and restore balance—making it ideal for those seeking deep relaxation or recovery from trauma and past stress.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Key Benefits</h2>
+            <p>Why craniosacral therapy supports your wellness</p>
+        </div>
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <div class="benefit-icon">😌</div>
+                <strong>Stress & Tension Relief</strong>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💊</div>
+                <strong>Pain Relief</strong>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">😴</div>
+                <strong>Improved Sleep</strong>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🎭</div>
+                <strong>Emotional Release</strong>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🧠</div>
+                <strong>Enhanced Body Awareness</strong>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🕊️</div>
+                <strong>Decreased Anxiety</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="book">
+        <h3>Ready for deep relaxation and healing?</h3>
+        <p>Experience the gentle power of craniosacral therapy</p>
+        <a href="#" class="btn-primary">Book Your Session</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Massage Way</h3>
+                <p>121 Indian Lake Rd, Suite C<br>
+                Hendersonville, TN 37075<br>
+                <a href="tel:+16152658232">(615) 265-8232</a></p>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="sub2a.html">Assisted Stretching</a></li>
+                    <li><a href="sub2b.html">Craniosacral Massage</a></li>
+                    <li><a href="#">Deep Tissue Massage</a></li>
+                    <li><a href="#">Swedish Massage</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../homepage-mocks/homepage-2.html#about">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Massage Way Hendersonville. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../shared/functions.js"></script>
+</body>
+</html>
