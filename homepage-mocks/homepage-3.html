@@ -6,8 +6,9 @@
 <title>Massage Way Wellness &amp; Co. | Massage Therapy &amp; Esthetic Skin Services in Hendersonville, TN</title>
 <meta name="description" content="Premium massage therapy and esthetic skin services in Hendersonville, TN. Relax, Recover, Restore, or find your Radiance at Massage Way Wellness & Co.">
 
-<!-- Adobe Fonts kit (Big Caslon Medium / Gravita HUM) — add kit <link> here once available.
-     Fallback stacks are defined in shared/styles.css (--font-heading / --font-body). -->
+<!-- Adobe Fonts (Typekit) — Big Caslon FB / Gravita HUM Variable -->
+<link rel="stylesheet" href="https://use.typekit.net/pdo4lyc.css">
+<!-- Google Fonts fallback, used only if the Typekit link above fails to load -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -23,29 +24,24 @@
 <body>
 
 <!-- ============================= HEADER =============================
-     Centered-logo nav, split left/right — the structural pattern this
-     mockup borrows from canyonranch.com (categories flanking a centered
-     wordmark, booking/contact pinned right). ======================= -->
+     Logo left; all primary nav items + Book Now grouped together on
+     the right as one cluster (rather than split across the bar). ==== -->
 <header class="site-header">
-  <div class="nav-wrap nav-centered">
-    <nav class="nav-links-left" aria-label="Primary">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="promotions.html">Promotions</a>
-    </nav>
-
+  <div class="nav-wrap">
     <a href="index.html" class="logo" aria-label="Massage Way Wellness & Co. — Home">
-      <img src="../images/Massage-Way-Logo-Dark-Wide.jpg" alt="Massage Way Wellness & Co.">
+      <img src="../new-assets/MassageWay-alt-logo-gold.svg" alt="Massage Way Wellness & Co.">
     </a>
 
-    <div class="nav-links-right">
-      <div class="nav-right-links">
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="promotions.html">Promotions</a>
         <a href="pricing.html">Pricing</a>
         <a href="gift-cards.html">Gift Cards</a>
         <a href="contact.html">Contact Us</a>
-        <a class="phone-link" href="tel:6152658232">615-265-8232</a>
-        <a class="btn btn-primary" href="https://massagewayhendersonville.com/book-now/">Book Now</a>
-      </div>
+      </nav>
+      <a class="btn btn-primary" href="https://massagewayhendersonville.com/book-now/">Book Now</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -71,18 +67,25 @@
      build static-site / Elementor-friendly. ===================== -->
 <section class="hero hero-centered hero-widescreen" style="background-image: url('../images/new-hero-image.jpg');">
   <div class="hero-content">
+    <img src="../images/BOTN-Seal-2025-Best.png" alt="Voted Best of Tennessee 2025" class="hero-badge">
     <span class="eyebrow">Hendersonville, Tennessee</span>
     <h1>Massage Therapy and Esthetic Skin Services in Hendersonville, TN</h1>
     <p class="hero-sub">Relaxation, Pain Relief, and Self-Care Skin Services</p>
     <p class="hero-copy">Discover the ultimate relaxation and wellness experience with our professional massage and esthetic services. Whether you're easing stress, relieving pain, or improving flexibility, we specialize in Swedish, Deep Tissue, Lymphatic, and Sports massage — now with esthetic services including brow lamination, lash lifts, and facials.</p>
     <div class="hero-ctas">
       <a href="https://massagewayhendersonville.com/book-now/" class="btn btn-primary">Book Now</a>
-      <a href="services.html" class="btn btn-outline-light">View Services</a>
+      <a href="services.html" class="btn btn-offwhite">View Services</a>
     </div>
-    <div class="hero-offer">
-      <strong>New Client Special</strong>
-      <span>$10 off any 60 or 90 minute Swedish or Deep Tissue massage</span>
-    </div>
+  </div>
+</section>
+
+<!-- =================== NEW CLIENT SPECIAL ANNOUNCEMENT =====================
+     Full-width solid-color banner directly under the hero (moved out of
+     the hero-offer badge into its own announcement strip). ============ -->
+<section class="announcement-banner">
+  <div class="container announcement-inner">
+    <i class="ph-light ph-tag"></i>
+    <span><strong>New Client Special</strong> — $10 off any 60 or 90 minute Swedish or Deep Tissue massage</span>
   </div>
 </section>
 
@@ -101,7 +104,7 @@
       <div class="destination-card">
         <div class="d-image" style="background-image: url('../images/Swedish-Massage.jpg');"></div>
         <div class="d-body">
-          <span class="eyebrow">Relax</span>
+          <i class="ph-light ph-moon d-icon"></i>
           <h3>Relax</h3>
           <p>Slow down, release everyday stress, and enjoy deep relaxation.</p>
           <a href="services.html#relax" class="btn btn-outline">Explore Relax</a>
@@ -110,25 +113,25 @@
       <div class="destination-card">
         <div class="d-image" style="background-image: url('../images/Sports-Massage.jpg');"></div>
         <div class="d-body">
-          <span class="eyebrow">Recovery</span>
+          <i class="ph-light ph-heartbeat d-icon"></i>
           <h3>Recovery</h3>
           <p>Muscle tension, soreness, mobility, and targeted therapeutic care.</p>
           <a href="services.html#recovery" class="btn btn-outline">Explore Recovery</a>
         </div>
       </div>
       <div class="destination-card">
-        <div class="d-image" style="background-image: url('../images/Reflexology.jpg');"></div>
+        <div class="d-image" style="background-image: url('../images/Reflexology-Experience.jpg');"></div>
         <div class="d-body">
-          <span class="eyebrow">Restore</span>
+          <i class="ph-light ph-drop d-icon"></i>
           <h3>Restore</h3>
           <p>Restorative wellness, balance, renewal, and specialized bodywork.</p>
           <a href="services.html#restore" class="btn btn-outline">Explore Restore</a>
         </div>
       </div>
       <div class="destination-card">
-        <div class="d-image" style="background-image: url('../images/facial2.jpg');"></div>
+        <div class="d-image" style="background-image: url('../images/facial1.jpg');"></div>
         <div class="d-body">
-          <span class="eyebrow">Radiance</span>
+          <i class="ph-light ph-sparkle d-icon"></i>
           <h3>Radiance</h3>
           <p>Skincare, facials, hydration, and a healthy-looking glow.</p>
           <a href="services.html#radiance" class="btn btn-outline">Explore Radiance</a>
@@ -138,15 +141,14 @@
   </div>
 </section>
 
-<!-- =============== NEW STUDIO ANNOUNCEMENT (centered banner) ============
+<!-- =============== NEW LOCATION ANNOUNCEMENT (centered banner) ============
      Full-width image banner with centered overlay text — Canyon Ranch's
      "new property" announcement pattern. =========================== -->
-<section class="cr-banner" style="background-image: url('../images/Massage-Room-1.jpg');">
+<section class="cr-banner cr-banner-compact cr-banner-dark" style="background-image: url('../images/Massage-Room-1.jpg');">
   <div class="cr-banner-copy">
-    <span class="eyebrow" style="color:var(--gold-light)">A New Chapter</span>
+    <span class="eyebrow" style="color:var(--gold-light)">New Location</span>
     <h2>A New Space. A New Chapter. The Same Exceptional Care.</h2>
-    <p>Massage Way has moved into a larger, more beautiful studio in Hendersonville — 105 Glen Oak Blvd, Suite 100.</p>
-    <a href="about.html" class="btn btn-ghost-on-deep" style="margin-top:8px;">Learn More</a>
+    <p>Our studio has relocated to 105 Glen Oak Blvd, Suite 100.</p>
   </div>
 </section>
 
@@ -157,7 +159,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Signature Treatments</span>
-      <h2>New &amp; Noteworthy</h2>
+      <h2>Popular Treatments</h2>
     </div>
     <div class="offerings-grid">
       <div class="offering-card">
@@ -187,7 +189,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Our Philosophy</span>
-      <h2>Experience the Difference at Massage Way Hendersonville</h2>
+      <h2>Experience the Difference at Massage Way Wellness &amp; Co.</h2>
       <p>Total body care, personalized experiences, and exceptional service to help you feel rejuvenated.</p>
     </div>
     <div class="pillar-row">
@@ -220,7 +222,7 @@
      resources module. ===================================================  -->
 <section class="bg-cream">
   <div class="container">
-    <div class="resource-panel">
+    <div class="resource-panel resource-panel-white">
       <div class="rp-copy">
         <span class="eyebrow">New Here?</span>
         <h3 class="mb-0">First Visit? Here's What to Expect.</h3>
@@ -231,31 +233,35 @@
   </div>
 </section>
 
-<!-- ========================== GIFT CARDS / RETAIL TIE-IN ================= -->
+<!-- ============================ COUPLES MASSAGE =========================== -->
 <section class="bg-white">
+  <div class="container couples-section">
+    <img src="../images/Getting-Couples-Massage.jpg" alt="Couple enjoying a side-by-side massage session">
+    <div class="couples-copy">
+      <span class="eyebrow">Together</span>
+      <h2>Experience a Couples Massage With Your Loved One</h2>
+      <p>A couples massage lets you relax and unwind together, enjoying stress relief and relaxation in a peaceful environment while strengthening your connection.</p>
+      <p>Sharing a massage creates lasting memories and provides a calming experience that promotes mutual relaxation and well-being.</p>
+      <div class="couples-note">
+        <strong>Please note:</strong> Couples massage is scheduled by phone only.
+      </div>
+      <a href="tel:6152658232" class="btn btn-primary">Call to Schedule</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== GIFT CARDS / RETAIL TIE-IN ================= -->
+<section class="bg-cream">
   <div class="container text-center">
     <span class="eyebrow">Give the Gift of Relaxation</span>
-    <h2>Massage Way Gift Cards</h2>
+    <h2>Massage Way Wellness &amp; Co. Gift Cards</h2>
     <p style="max-width:560px;margin:0 auto 28px;color:var(--text-muted)">Available for any treatment or dollar amount — the perfect gift for birthdays, holidays, or just because.</p>
     <a href="gift-cards.html" class="btn btn-outline">Shop Gift Cards</a>
   </div>
 </section>
 
-<!-- ========================= AWARDS / CREDENTIALS (minimal row) ========== -->
-<section class="bg-cream">
-  <div class="container">
-    <div class="awards-row-minimal">
-      <div class="award-item">
-        <img src="../images/BOTN-Seal-2025-Best.png" alt="Best of Tennessee 2025">
-        <span>Voted Best of Tennessee 2025</span>
-      </div>
-      <div class="award-item">
-        <i class="ph-light ph-seal-check" style="font-size:3rem;color:var(--gold);"></i>
-        <span>Licensed &amp; Certified Therapists</span>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ========================= BEST OF TENNESSEE (full-width image) ========= -->
+<section class="botn-banner" style="background-image: url('../images/BOTN-2025-Best-Web-1000x294-1.jpg');" role="img" aria-label="Voted Best of Tennessee 2025"></section>
 
 <!-- ============================ SOCIAL / INSTAGRAM GRID =================== -->
 <section class="bg-white">
@@ -308,12 +314,59 @@
   </div>
 </section>
 
+<!-- ================================ REVIEWS ================================
+     Mockup built with plain HTML elements, standing in for the Trust
+     Index widget the live site embeds via shortcode. Reviewer names and
+     the gist of each review are pulled from the current site; wording
+     below is paraphrased, not copied verbatim. ========================= -->
+<section class="bg-white">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What Our Guests Are Saying</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Rachel is amazing — I always leave feeling completely renewed after my sessions with her."</p>
+        <span class="review-name">Ashley H.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Terrie has been my go-to for years. I honestly wouldn't trust anyone else with my massages."</p>
+        <span class="review-name">Nina H.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"My husband and I both tried the Japanese Facelift with Rachel — my recurring headaches finally eased up."</p>
+        <span class="review-name">Jack F.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Between Sissy, Beverly, and a facial with Rachel, every single therapist here is talented and genuinely caring."</p>
+        <span class="review-name">Brooke W.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"The attention to detail and genuine care from this team keeps me coming back for every service."</p>
+        <span class="review-name">Candace C.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Exactly what I needed after a stressful week — this studio is a reset button in the best way."</p>
+        <span class="review-name">Breanna S.</span>
+      </div>
+    </div>
+    <p class="widget-note" style="text-align:center;margin-top:28px;">[ Live Trust Index review widget inserted via WordPress shortcode on the production site ]</p>
+  </div>
+</section>
+
 <!-- ================================ FOOTER ================================= -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-grid" style="grid-template-columns: 1.4fr 1fr 1fr;">
       <div class="footer-brand">
-        <div class="logo-text">Massage Way Wellness &amp; Co.</div>
+        <img src="../new-assets/MassageWay-logo-wht.png" alt="Massage Way Wellness & Co." style="height:44px;width:auto;margin-bottom:14px;">
         <p>105 Glen Oak Blvd Suite 100<br>Hendersonville, TN 37075<br>615-265-8232</p>
         <p>Mon–Fri: 9am–7pm<br>Sat: 9am–5pm<br>Closed Sunday</p>
         <div class="footer-social">
@@ -337,14 +390,6 @@
           <li><a href="faq.html">Frequently Asked Questions</a></li>
           <li><a href="employment.html">Employment</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Stay Connected</h4>
-        <p style="color:rgba(234,226,206,0.7);font-size:0.88rem;">Sign up for seasonal offers and wellness tips.</p>
-        <form class="footer-newsletter" onsubmit="return false;">
-          <input type="email" placeholder="Email address" aria-label="Email address">
-          <button type="submit">Sign Up</button>
-        </form>
       </div>
     </div>
     <div class="footer-bottom">

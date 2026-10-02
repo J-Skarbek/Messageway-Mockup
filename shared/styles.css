@@ -27,11 +27,13 @@
   --border-soft: rgba(35, 47, 76, 0.12);
   --nav-bg: rgba(234, 226, 206, 0.92);
 
-  /* Typography — fallback stacks until Adobe Fonts kit (Big Caslon /
-     Gravita HUM) is embedded. Swap the --font-heading / --font-body
-     values once the kit <link> is added to <head>. */
-  --font-heading: 'Cormorant Garamond', 'Big Caslon', 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Jost', 'Gravita HUM', 'Futura PT', 'Century Gothic', 'Avenir Next', sans-serif;
+  /* Typography — Adobe Fonts (Typekit) kit loaded per-page via
+     <link href="https://use.typekit.net/pdo4lyc.css">. Big Caslon FB
+     and Gravita HUM Variable are the real family names from that kit;
+     the rest of each stack is a fallback for when the kit is slow to
+     load or the link is missing from a given page. */
+  --font-heading: 'big-caslon-fb', 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'gravita-hum-variable', 'Jost', 'Futura PT', 'Century Gothic', 'Avenir Next', sans-serif;
 
   /* Spacing / layout */
   --max-width: 1200px;
@@ -798,6 +800,105 @@ section { padding: var(--section-pad) 0; }
   font-size: 0.82rem;
   cursor: pointer;
 }
+
+/* ==========================================================================
+   Homepage-3 refinements (hero badge, off-white CTA, announcement strip,
+   compact/darker banner, card icons, 2x2 grid, white resource card,
+   full-bleed award image, reviews grid)
+   ========================================================================== */
+
+/* Award badge pinned above the hero eyebrow — natural aspect ratio,
+   capped width, centered */
+.hero-badge {
+  max-width: 125px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+/* Off-white CTA (vs. the transparent/outlined treatment used elsewhere) */
+.btn-offwhite {
+  background: #fbfaf7;
+  color: var(--navy);
+  border-color: #fbfaf7;
+}
+.btn-offwhite:hover { background: var(--navy); color: #fbfaf7; border-color: var(--navy); }
+
+/* Full-width solid announcement strip (New Client Special), under the hero */
+.announcement-banner { background: var(--gold); padding: 16px 0; }
+.announcement-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.announcement-inner i { font-size: 1.3rem; }
+.announcement-inner strong { font-weight: 700; }
+@media (max-width: 560px) {
+  .announcement-inner { flex-direction: column; gap: 4px; }
+}
+
+/* Shorter New Location banner + darker/whiter variant, reused on both
+   the hero and this banner */
+.cr-banner-compact { min-height: 280px; }
+.cr-banner-dark::before { background: rgba(0, 0, 0, 0.8); }
+.cr-banner-dark .cr-banner-copy p { color: rgba(255,255,255,0.95); }
+
+.hero-widescreen::before { background: rgba(0, 0, 0, 0.8); }
+.hero-widescreen .hero-content h1 { color: #ffffff; }
+.hero-widescreen .hero-content .hero-copy { color: rgba(255,255,255,0.95); }
+.hero-widescreen .hero-sub { font-size: 2.3rem; }
+
+/* Destination card icon (replaces the duplicated eyebrow/heading text) */
+.d-icon {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+/* Card body as flexbox, contents spaced evenly rather than stacked tight */
+.destination-card .d-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 260px;
+}
+/* 2x2 grid by default on this mockup (was 4-across) */
+.destination-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) { .destination-grid { grid-template-columns: 1fr; } }
+
+/* White inner card for the "New Here?" resource panel, section bg unchanged */
+.resource-panel-white { background: #ffffff; }
+
+/* Full-bleed Best of Tennessee award image, no overlay text */
+.botn-banner {
+  width: 100%;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 768px) { .botn-banner { min-height: 160px; } }
+
+/* Reviews mockup grid */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  border: 1px solid var(--border-soft);
+}
+.review-stars { color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; }
+.review-card p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 14px; }
+.review-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
+@media (max-width: 860px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
 
 /* ---- Utility ---------------------------------------------------------- */
 .text-center { text-align: center; }
