@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Theme: CONTRAST / DEEP NAVY
+   More saturated use of the brand palette — alternating deep navy and
+   blue sections against cream, bolder gold accents. Same brand colors
+   as the light theme, used with more weight and contrast.
+   ========================================================================== */
+:root {
+  --bg-body: var(--cream);
+  --bg-section-alt: #ffffff;
+  --bg-section-deep: var(--navy);
+  --text-primary: var(--navy);
+  --text-muted: #46527a;
+  --accent: var(--gold);
+  --accent-soft: var(--gold-light);
+  --border-soft: rgba(35, 47, 76, 0.16);
+  --nav-bg: rgba(35, 47, 76, 0.94);
+  --bg-award: var(--navy);
+  --bg-location: var(--blue);
+  --hero-overlay: linear-gradient(0deg, rgba(23,31,51,0.90) 0%, rgba(23,31,51,0.48) 55%, rgba(23,31,51,0.18) 100%);
+}
+
+/* Navy nav bar in the contrast theme flips the nav text/logo treatment */
+.site-header.theme-contrast-nav { border-bottom: 1px solid rgba(234,226,206,0.14); }
+.site-header.theme-contrast-nav .nav-links a,
+.site-header.theme-contrast-nav .phone-link,
+.site-header.theme-contrast-nav .logo-text { color: var(--cream); }
+.site-header.theme-contrast-nav .nav-links a::after { background: var(--gold-light); }
+.site-header.theme-contrast-nav .hamburger span { background: var(--cream); }
+/* NOTE: swap --logo-src to a light/cream logo file once provided — the
+   current "Dark" logo files are tuned for light backgrounds. Filter below
+   is a temporary stand-in so the logo stays legible on the navy nav. */
+.site-header.theme-contrast-nav .logo img { filter: brightness(0) invert(1); }
+.site-header.theme-contrast-nav.is-scrolled { background: var(--navy); }
+
+.mobile-nav.theme-contrast-mobile { background: var(--navy); }
+.mobile-nav.theme-contrast-mobile a { color: var(--cream); border-bottom-color: rgba(234,226,206,0.14); }
+
+/* Alternating section backgrounds for stronger rhythm */
+.bg-navy { background: var(--navy); color: var(--cream); }
+.bg-navy h2, .bg-navy h3 { color: var(--white); }
+.bg-navy p { color: rgba(234,226,206,0.85); }
+.bg-blue { background: var(--blue); color: var(--cream); }
+.bg-blue h2, .bg-blue h3 { color: var(--white); }
+.bg-blue p { color: rgba(234,226,206,0.85); }
+.bg-white { background: #ffffff; }
+.bg-cream { background: var(--cream); }
+
+.feel-card { box-shadow: 0 20px 46px rgba(14,19,33,0.28); }
+
+/* Icon marks (currently navy SVGs) need to invert to read on dark sections.
+   Swap for light-colored icon variants once available instead of filtering. */
+.bg-navy .icon-mark,
+.bg-blue .icon-mark { filter: brightness(0) invert(1); }
+.bg-navy .experience-item p,
+.bg-blue .experience-item p { color: rgba(234,226,206,0.78); }
+.bg-navy .eyebrow,
+.bg-blue .eyebrow { color: var(--gold-light); }

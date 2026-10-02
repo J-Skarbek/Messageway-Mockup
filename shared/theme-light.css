@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Theme: LIGHT / OFF-WHITE
+   Soft, airy, mostly cream & white with navy type and gold accents.
+   Navy is used sparingly (footer, location panel, a couple of overlays)
+   rather than as full-section backgrounds.
+   ========================================================================== */
+:root {
+  --bg-body: #fbfaf7;           /* soft off-white, slightly warmer than pure white */
+  --bg-section-alt: var(--cream);
+  --bg-section-deep: var(--navy);
+  --text-primary: var(--navy);
+  --text-muted: #5f6a81;
+  --accent: var(--gold);
+  --accent-soft: var(--gold-light);
+  --border-soft: rgba(35, 47, 76, 0.1);
+  --nav-bg: rgba(251, 250, 247, 0.9);
+  --bg-award: var(--cream);
+  --bg-location: var(--navy);
+  --hero-overlay: linear-gradient(0deg, rgba(35,47,76,0.80) 0%, rgba(35,47,76,0.32) 55%, rgba(35,47,76,0.08) 100%);
+}
+
+.award-banner.theme-light-award h3,
+.award-banner.theme-light-award p { color: var(--navy); }
+.award-banner.theme-light-award p { color: var(--blue); }
+
+/* Alternate white/cream rhythm for sections in the light theme */
+.bg-white { background: #ffffff; }
+.bg-cream { background: var(--cream); }
+
+/* Softer card shadow for the light theme */
+.feel-card { box-shadow: 0 14px 32px rgba(35,47,76,0.1); }
