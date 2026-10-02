@@ -646,6 +646,7 @@ section { padding: var(--section-pad) 0; }
    centered via background-position. A flat black tint replaces the
    directional navy gradient so legibility holds. */
 .hero-widescreen {
+  width: 100%;
   aspect-ratio: 16 / 9;
   min-height: unset;
   max-height: 760px;
@@ -897,16 +898,11 @@ section { padding: var(--section-pad) 0; }
 /* White inner card for the "New Here?" resource panel, section bg unchanged */
 .resource-panel-white { background: #ffffff; }
 
-/* Full-bleed Best of Tennessee award image, no overlay text — background
-   always covers its box and scales with the viewport */
-.botn-banner {
-  width: 100%;
-  min-height: 320px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-@media (max-width: 768px) { .botn-banner { min-height: 260px; } }
+/* Full-bleed Best of Tennessee award image — a real <img>, full width,
+   auto height, so it always shows the complete graphic uncropped and
+   scales proportionally as the viewport resizes (see homepage-3.html). */
+.botn-section { width: 100%; line-height: 0; }
+.botn-img { width: 100%; height: auto; display: block; }
 
 /* Footer brand icons (Facebook/Instagram glyphs via Phosphor, replacing
    the earlier "FB"/"IG" text placeholders) */

@@ -260,8 +260,13 @@
   </div>
 </section>
 
-<!-- ========================= BEST OF TENNESSEE (full-width image) ========= -->
-<section class="botn-banner" style="background-image: url('../images/BOTN-2025-Best-Web-1000x294-1.jpg');" role="img" aria-label="Voted Best of Tennessee 2025"></section>
+<!-- ========================= BEST OF TENNESSEE (full-width image) =========
+     An actual <img> (not a background-image) so the box sizes itself to
+     the graphic's real proportions — full width, height grows/shrinks
+     with the viewport, nothing cropped or zoomed. ===================== -->
+<section class="botn-section">
+  <img src="../images/BOTN-2025-Best-Web-1000x294-1.jpg" alt="Voted Best of Tennessee 2025" class="botn-img">
+</section>
 
 <!-- ============================ SOCIAL / INSTAGRAM GRID =================== -->
 <section class="bg-white">
