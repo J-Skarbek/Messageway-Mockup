@@ -901,7 +901,7 @@ section { padding: var(--section-pad) 0; }
 /* Full-bleed Best of Tennessee award image — a real <img>, full width,
    auto height, so it always shows the complete graphic uncropped and
    scales proportionally as the viewport resizes (see homepage-3.html). */
-.botn-section { width: 100%; line-height: 0; }
+.botn-section { width: 100%; line-height: 0; padding: 0; }
 .botn-img { width: 100%; height: auto; display: block; }
 
 /* Footer brand icons (Facebook/Instagram glyphs via Phosphor, replacing
