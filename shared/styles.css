@@ -478,6 +478,7 @@ section { padding: var(--section-pad) 0; }
 .couples-copy p { color: var(--text-muted); }
 .couples-note {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 16px 20px;
   border-left: 3px solid var(--accent);
   background: var(--bg-section-alt);
@@ -639,15 +640,15 @@ section { padding: var(--section-pad) 0; }
 .hero-centered .hero-ctas { justify-content: center; }
 .hero-centered .hero-offer { margin: 0 auto; }
 
-/* Widescreen hero crop (source photo is ~3:2; cropped to a shorter,
-   ~2:1 banner so it reads as a widescreen strip rather than a near
-   full-height hero). Image stays centered via background-position.
-   A flat black tint replaces the directional navy gradient so
-   legibility holds even though there's less vertical room. */
+/* Widescreen hero crop (source photo is ~3:2; cropped to a shorter
+   banner so it reads as a wide strip rather than a near full-height
+   hero, but with more vertical room than the first pass). Image stays
+   centered via background-position. A flat black tint replaces the
+   directional navy gradient so legibility holds. */
 .hero-widescreen {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 16 / 9;
   min-height: unset;
-  max-height: 640px;
+  max-height: 760px;
   align-items: center;
   background-position: center center;
 }
@@ -808,12 +809,12 @@ section { padding: var(--section-pad) 0; }
    ========================================================================== */
 
 /* Award badge pinned above the hero eyebrow — natural aspect ratio,
-   capped width, centered */
+   capped width, centered. Half the original size per latest revision. */
 .hero-badge {
-  max-width: 125px;
+  max-width: 62px;
   width: 100%;
   height: auto;
-  margin: 0 auto 16px;
+  margin: 0 auto 14px;
 }
 
 /* Off-white CTA (vs. the transparent/outlined treatment used elsewhere) */
@@ -847,10 +848,16 @@ section { padding: var(--section-pad) 0; }
 .cr-banner-dark::before { background: rgba(0, 0, 0, 0.8); }
 .cr-banner-dark .cr-banner-copy p { color: rgba(255,255,255,0.95); }
 
+/* Hero: darker overlay, whiter text, and breathing room under the CTAs
+   so the photo shows beneath the button row before the section edge.
+   (Sizing/aspect-ratio is set on the base .hero-widescreen rule above,
+   so the mobile override there isn't clobbered by source order.) */
 .hero-widescreen::before { background: rgba(0, 0, 0, 0.8); }
 .hero-widescreen .hero-content h1 { color: #ffffff; }
 .hero-widescreen .hero-content .hero-copy { color: rgba(255,255,255,0.95); }
 .hero-widescreen .hero-sub { font-size: 2.3rem; }
+.hero-widescreen .hero-content { padding-bottom: 25px; }
+.hero-widescreen .hero-ctas { margin-bottom: 16px; }
 
 /* Destination card icon (replaces the duplicated eyebrow/heading text) */
 .d-icon {
@@ -870,17 +877,40 @@ section { padding: var(--section-pad) 0; }
 .destination-grid { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 600px) { .destination-grid { grid-template-columns: 1fr; } }
 
+/* Compact variant: grid itself narrowed to ~2/3 width (centered), cards
+   shrunk to match — fixed-height image strip instead of the taller
+   aspect-ratio crop, tighter body padding and type. */
+.destination-grid-compact {
+  max-width: 66%;
+  margin: 0 auto;
+  gap: 20px;
+}
+.destination-grid-compact .d-image { aspect-ratio: unset; height: 200px; }
+.destination-grid-compact .d-body { padding: 16px 16px 20px; min-height: 170px; }
+.destination-grid-compact .d-icon { font-size: 1.7rem; margin-bottom: 6px; }
+.destination-grid-compact h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.destination-grid-compact p { font-size: 0.82rem; margin-bottom: 10px; }
+.destination-grid-compact .btn { padding: 8px 16px; font-size: 0.7rem; }
+@media (max-width: 860px) { .destination-grid-compact { max-width: 85%; } }
+@media (max-width: 600px) { .destination-grid-compact { max-width: 100%; } }
+
 /* White inner card for the "New Here?" resource panel, section bg unchanged */
 .resource-panel-white { background: #ffffff; }
 
-/* Full-bleed Best of Tennessee award image, no overlay text */
+/* Full-bleed Best of Tennessee award image, no overlay text — background
+   always covers its box and scales with the viewport */
 .botn-banner {
   width: 100%;
-  min-height: 220px;
+  min-height: 320px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
-@media (max-width: 768px) { .botn-banner { min-height: 160px; } }
+@media (max-width: 768px) { .botn-banner { min-height: 260px; } }
+
+/* Footer brand icons (Facebook/Instagram glyphs via Phosphor, replacing
+   the earlier "FB"/"IG" text placeholders) */
+.footer-social a i { font-size: 1.15rem; }
 
 /* Reviews mockup grid */
 .reviews-grid {
@@ -899,6 +929,112 @@ section { padding: var(--section-pad) 0; }
 .review-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
 @media (max-width: 860px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   Trustindex-style reviews widget mockup (homepage-3) — built to match
+   the live site's embedded widget visually: rating summary panel, a row
+   of review cards with avatar/name/stars/Google badge, and a "Verified
+   by Trustindex" pill. Static HTML/CSS stand-in, not a live widget.
+   ========================================================================== */
+.tw-heading {
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.35;
+  max-width: 880px;
+  margin-bottom: 40px;
+}
+.tw-highlight { color: var(--gold); font-weight: 700; }
+
+.tw-widget { position: relative; display: flex; align-items: center; gap: 36px; padding-bottom: 48px; }
+
+.tw-summary { flex: 0 0 210px; }
+.tw-excellent { display: block; font-weight: 800; font-size: 1.25rem; color: #1a1a1a; letter-spacing: 0.02em; margin-bottom: 8px; }
+.tw-stars-lg { color: #ffb400; font-size: 1.6rem; letter-spacing: 3px; margin-bottom: 8px; }
+.tw-based-on { font-size: 0.92rem; color: #1a1a1a; margin: 0 0 12px; }
+.tw-based-on strong { font-weight: 700; }
+.tw-google-logo { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 1.4rem; }
+.tw-google-logo .g-blue { color: #4285F4; }
+.tw-google-logo .g-red { color: #EA4335; }
+.tw-google-logo .g-yellow { color: #FBBC05; }
+.tw-google-logo .g-green { color: #34A853; }
+
+.tw-cards-row { flex: 1; min-width: 0; display: flex; align-items: center; gap: 16px; }
+.tw-nav {
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.tw-card {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.tw-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.tw-avatar {
+  flex: 0 0 auto;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.tw-card-id { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.tw-name { font-weight: 700; font-size: 0.92rem; color: #1a1a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tw-time { font-size: 0.76rem; color: #8a8a8a; }
+.tw-g-icon { font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-size: 1.05rem; color: #4285F4; }
+.tw-stars-row { display: flex; align-items: center; gap: 6px; color: #ffb400; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 10px; }
+.tw-verified {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 0.6rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  letter-spacing: 0;
+}
+.tw-review-text { flex: 1; font-size: 0.86rem; line-height: 1.55; color: #333; margin-bottom: 10px; }
+.tw-read-more { font-size: 0.8rem; color: #8a8a8a; }
+.tw-read-more:hover { text-decoration: underline; }
+
+.tw-verified-badge {
+  position: absolute;
+  bottom: 0; right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e6f4ea;
+  color: #1a7a3c;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+@media (max-width: 960px) {
+  .tw-widget { flex-direction: column; align-items: flex-start; }
+  .tw-summary { flex: 0 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .tw-stars-lg, .tw-based-on { margin-bottom: 0; }
+  .tw-cards-row { width: 100%; }
+}
+@media (max-width: 700px) {
+  .tw-cards-row { flex-direction: column; align-items: stretch; }
+  .tw-nav { display: none; }
+}
 
 /* ---- Utility ---------------------------------------------------------- */
 .text-center { text-align: center; }
