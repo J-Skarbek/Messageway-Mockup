@@ -1048,6 +1048,14 @@ section { padding: var(--section-pad) 0; }
 .nav-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
 .nav-dropdown > a .nav-caret { font-size: 0.85em; transition: transform 0.2s ease; }
 .nav-dropdown:hover > a .nav-caret { transform: rotate(180deg); }
+/* Invisible bridge over the visual gap between the link and the panel below it —
+   without this, the mouse crosses "dead" space with nothing hoverable underneath
+   it and the panel closes before you can reach it. */
+.nav-dropdown::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%); width: 100%; min-width: 210px; height: 20px;
+  z-index: 59;
+}
 .nav-dropdown-panel {
   position: absolute; top: 100%; left: 50%;
   transform: translateX(-50%) translateY(6px);
