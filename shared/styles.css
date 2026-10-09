@@ -121,6 +121,12 @@ section { padding: var(--section-pad) 0; }
   border-color: var(--text-primary);
 }
 .btn-outline:hover { background: var(--text-primary); color: var(--bg-body); }
+.btn-tan {
+  background: var(--cream);
+  color: var(--navy);
+  border-color: var(--cream);
+}
+.btn-tan:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--navy); }
 .btn-outline-light {
   background: transparent;
   color: var(--cream);
