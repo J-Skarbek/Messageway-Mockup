@@ -1040,8 +1040,35 @@ section { padding: var(--section-pad) 0; }
    ========================================================================= */
 
 /* -- Larger nav logo (resort v2 + secondary pages) -- */
-.logo-lg img { height: 60px; }
-@media (max-width: 560px) { .logo-lg img { height: 48px; } }
+.logo-lg img { height: 69px; } /* 15% larger than the original 60px */
+@media (max-width: 560px) { .logo-lg img { height: 55px; } }
+
+/* -- Services dropdown (desktop hover + mobile flat sublist) -- */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+.nav-dropdown > a .nav-caret { font-size: 0.85em; transition: transform 0.2s ease; }
+.nav-dropdown:hover > a .nav-caret { transform: rotate(180deg); }
+.nav-dropdown-panel {
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #fff; border-radius: 10px; min-width: 210px;
+  padding: 10px; margin-top: 10px;
+  box-shadow: 0 16px 34px rgba(35,47,76,0.16);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 60;
+}
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-panel a {
+  display: block; padding: 10px 14px; font-size: 0.85rem;
+  color: var(--text-primary); border-radius: 6px; white-space: nowrap;
+}
+.nav-dropdown-panel a::after { content: none; }
+.nav-dropdown-panel a:hover { background: var(--bg-section-alt); color: var(--gold); }
+.mobile-nav a.mobile-sublink { padding-left: 34px; font-size: 0.85rem; opacity: 0.85; }
 
 /* -- Hero logo + name lockup (replaces the hero H1 copy on resort v2) -- */
 .hero-logo-lockup { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-bottom: 4px; }
@@ -1192,7 +1219,7 @@ section { padding: var(--section-pad) 0; }
 .coming-soon-flag { display: inline-block; margin-left: 10px; font-size: 0.68rem; vertical-align: middle; background: var(--gold); color: #fff; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 999px; }
 .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .service-card { position: relative; background: #fff; border-radius: var(--radius-md); padding: 26px 26px 22px; box-shadow: 0 10px 26px rgba(35,47,76,0.07); }
-.service-card.is-soon { background: var(--bg-section-alt); box-shadow: none; border: 1px dashed var(--border-soft); }
+.service-card.is-soon { background: #f3efe3; box-shadow: none; border: 1px dashed rgba(186,140,66,0.4); } /* sits between white and the cream section bg so it reads as distinct in either */
 .service-card h4 { margin-bottom: 8px; padding-right: 96px; }
 .service-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px; }
 .badge-soon {
@@ -1202,6 +1229,29 @@ section { padding: var(--section-pad) 0; }
 .service-meta { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 0.84rem; color: var(--navy); font-weight: 600; }
 .service-meta .price { color: var(--gold); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 400; }
 @media (max-width: 760px) { .service-grid { grid-template-columns: 1fr; } }
+
+/* -- Individual service detail block (category pages: Relax/Recovery/Restore/Radiance) --
+   Text left, image right; pill boxes for "what to expect", condensed copy,
+   small inline icon-check list. No price, no Book Now button by design. -- */
+.service-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 64px; }
+.service-detail:last-child { margin-bottom: 0; }
+.service-detail-media { aspect-ratio: 4/3; border-radius: var(--radius-md); overflow: hidden; }
+.service-detail-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.service-detail-copy .sd-kicker { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 8px; }
+.service-detail-copy h3 { margin-bottom: 16px; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.pill-row .pill {
+  display: inline-flex; align-items: center; padding: 6px 15px; font-size: 0.76rem;
+  border: 1px solid var(--border-soft); border-radius: 999px; color: var(--text-primary); background: #fff;
+}
+.service-detail-copy .sd-desc { color: var(--text-muted); margin-bottom: 18px; max-width: 540px; }
+.icon-check-list { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; padding: 0; margin: 0; }
+.icon-check-list li { display: flex; align-items: center; gap: 7px; font-size: 0.84rem; color: var(--text-primary); }
+.icon-check-list li i { color: var(--gold); font-size: 1.05rem; flex-shrink: 0; }
+@media (max-width: 860px) {
+  .service-detail { grid-template-columns: 1fr; gap: 24px; }
+  .service-detail-media { order: -1; }
+}
 
 /* ---- Utility ---------------------------------------------------------- */
 .text-center { text-align: center; }

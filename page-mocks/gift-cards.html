@@ -28,13 +28,21 @@
     <div class="nav-right">
       <nav class="nav-links" aria-label="Primary">
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
+        <div class="nav-dropdown">
+          <a href="services.html">Services <i class="ph-light ph-caret-down nav-caret"></i></a>
+          <div class="nav-dropdown-panel">
+            <a href="services/relax.html">Relax Collection</a>
+            <a href="services/recovery.html">Recovery Collection</a>
+            <a href="services/restore.html">Restore Collection</a>
+            <a href="services/radiance.html">Radiance Collection</a>
+          </div>
+        </div>
         <a href="promotions.html">Promotions</a>
         <a href="pricing.html">Pricing</a>
         <a href="gift-cards.html" class="active">Gift Cards</a>
         <a href="contact.html">Contact Us</a>
       </nav>
-      <a class="btn btn-primary" href="https://massagewayhendersonville.com/book-now/">Book Now</a>
+      <a class="btn btn-primary" href="book-now.html">Book Now</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -44,11 +52,15 @@
   <nav class="mobile-nav" aria-label="Mobile">
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
+    <a href="services/relax.html" class="mobile-sublink">Relax Collection</a>
+    <a href="services/recovery.html" class="mobile-sublink">Recovery Collection</a>
+    <a href="services/restore.html" class="mobile-sublink">Restore Collection</a>
+    <a href="services/radiance.html" class="mobile-sublink">Radiance Collection</a>
     <a href="promotions.html">Promotions</a>
     <a href="pricing.html">Pricing</a>
     <a href="gift-cards.html" class="active">Gift Cards</a>
     <a href="contact.html">Contact Us</a>
-    <a class="btn btn-primary" href="https://massagewayhendersonville.com/book-now/">Book Now</a>
+    <a class="btn btn-primary" href="book-now.html">Book Now</a>
     <a class="mobile-phone" href="tel:6152658232">615-265-8232</a>
   </nav>
 </header>
@@ -63,37 +75,13 @@
   </div>
 </section>
 
-<!-- =========================== GIFT CARD WIDGET MOCKUP ====================
-     The live site embeds a Vagaro gift-card ordering widget here. This is
-     a visual HTML/CSS mockup only — not a functional embed. ============== -->
+<!-- ============================ GIFT CARD WIDGET ============================
+     Live Vagaro gift-card embed — left exactly as supplied. Colors/styles
+     for this widget are managed through the Vagaro dashboard, not this
+     stylesheet. ========================================================== -->
 <section class="bg-white">
-  <div class="container">
-    <div class="giftcard-widget">
-      <h3>Give the Gift of Relaxation</h3>
-      <p class="gc-sub">Choose a category and amount below to send a Massage Way Wellness &amp; Co. gift card.</p>
-
-      <div class="gc-amounts-label">Choose a Category</div>
-      <div class="gc-categories">
-        <div class="gc-cat-btn selected">Massage</div>
-        <div class="gc-cat-btn">Facials &amp; Skin Care</div>
-        <div class="gc-cat-btn">Brows &amp; Lashes</div>
-      </div>
-
-      <div class="gc-amounts-label">Choose an Amount</div>
-      <div class="gc-amounts">
-        <span class="gc-amount">$25</span>
-        <span class="gc-amount">$50</span>
-        <span class="gc-amount selected">$75</span>
-        <span class="gc-amount">$100</span>
-        <span class="gc-amount">$150</span>
-        <span class="gc-amount">Custom</span>
-      </div>
-
-      <a href="#" class="btn btn-primary" onclick="return false;">Add to Cart</a>
-      <span class="gc-note">NOTE: All Massage Way Wellness &amp; Co. gift cards expire within 2 years of purchase.</span>
-      <span class="gc-powered">Powered by Vagaro</span>
-      <span class="gc-mock-tag">Mockup only — live page uses an embedded Vagaro ordering widget</span>
-    </div>
+  <div class="container" style="max-width:640px;">
+    <div id='frameTitle' class='embedded-widget-title' style='font-size: 23px; color: #333;font-family:Arial, Helvetica, sans-serif; line-height:24px; padding: 18px 10px 8px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;'></div><div class="vagaro" style="width:250px; padding:0; border:0; margin:0 auto; text-align:center;"><style>.vagaro a {font-size:14px; color:#AAA; text-decoration:none;}</style><a href="https://www.vagaro.com/pro/">Powered by Vagaro</a>&nbsp;<a href="https://www.vagaro.com/pro/salon-software">Salon Software</a>,&nbsp;<a href="https://www.vagaro.com/pro/spa-software">Spa Software</a>&nbsp;&amp;&nbsp;<a href="https://www.vagaro.com/pro/fitness-software">Fitness Software</a><script type="text/javascript" src="https://www.vagaro.com//resources/WidgetEmbeddedLoader/OZqpCpOqC30cT3qoV3avV34mC2PeFJ4mC30m9dSycvCu7gCmjZcoapOUcnCvdfQOW?v=3zjqKUMdYj5fifBMDmEzvdLmiNXOq5jliu4WRF0zlTT0#"></script></div>
   </div>
 </section>
 
