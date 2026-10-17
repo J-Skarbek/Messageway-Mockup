@@ -713,7 +713,8 @@ section { padding: var(--section-pad) 0; }
 }
 .offering-card { background: var(--bg-section-alt); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 10px 28px rgba(35,47,76,0.08); }
 .offering-card .o-image { aspect-ratio: 16/10; background-size: cover; background-position: center; }
-.offering-card .o-body { padding: 28px 28px 32px; }
+.offering-card .o-body { padding: 28px 28px 32px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.offering-card .o-body .o-text { display: flex; flex-direction: column; }
 .offering-card p { color: var(--text-muted); }
 
 @media (max-width: 768px) { .offerings-grid { grid-template-columns: 1fr; } }
