@@ -1231,6 +1231,20 @@ section { padding: var(--section-pad) 0; }
 .collection-head { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 10px; }
 .collection-head i { font-size: 2rem; color: var(--gold); }
 .collection-intro { text-align: center; color: var(--text-muted); max-width: 640px; margin: 0 auto 40px; }
+
+/* Sub-group divider used on pages that bundle more than one category of
+   treatment under a single collection (e.g. Lymphatic Services). */
+.lymph-group-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: var(--navy);
+  text-align: center;
+  margin: 56px 0 28px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-soft);
+}
+.lymph-group-title:first-of-type { margin-top: 8px; padding-top: 0; border-top: none; }
 .coming-soon-flag { display: inline-block; margin-left: 10px; font-size: 0.68rem; vertical-align: middle; background: var(--gold); color: #fff; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 999px; }
 .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .service-card { position: relative; background: #fff; border-radius: var(--radius-md); padding: 26px 26px 22px; box-shadow: 0 10px 26px rgba(35,47,76,0.07); }
