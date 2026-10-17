@@ -1271,6 +1271,12 @@ section { padding: var(--section-pad) 0; }
 }
 .service-detail-copy .service-meta .price { font-size: 1.21rem; }
 .service-detail-copy .service-meta span:not(.price) { font-size: 0.756rem; }
+
+/* Two price columns side by side (e.g. a single session next to a package
+   price) — columns sit flush against the shared divider, not spread apart. */
+.service-detail-copy .service-meta-split { display: flex; align-items: stretch; gap: 20px; margin-bottom: 4px; }
+.service-detail-copy .service-meta-split .service-meta { margin-bottom: 0; }
+.service-detail-copy .service-meta-divider { width: 1px; background: var(--border-soft); align-self: stretch; }
 @media (max-width: 760px) { .service-grid { grid-template-columns: 1fr; } }
 
 /* -- Individual service detail block (category pages: Relax/Recovery/Restore/Radiance) --
