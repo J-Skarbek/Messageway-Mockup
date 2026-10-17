@@ -1242,6 +1242,20 @@ section { padding: var(--section-pad) 0; }
 }
 .service-meta { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; font-size: 0.84rem; color: var(--navy); font-weight: 600; }
 .service-meta .price { color: var(--gold); font-family: var(--font-heading); font-size: 1.1rem; font-weight: 400; }
+
+/* Category pages (Relax/Recovery/Restore/Radiance): price stacked above the
+   duration, both left-aligned with the rest of the copy column — price 10%
+   larger, duration 10% smaller than the base .service-meta sizing above. */
+.service-detail-copy .service-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+.service-detail-copy .service-meta .price { font-size: 1.21rem; }
+.service-detail-copy .service-meta span:not(.price) { font-size: 0.756rem; }
 @media (max-width: 760px) { .service-grid { grid-template-columns: 1fr; } }
 
 /* -- Individual service detail block (category pages: Relax/Recovery/Restore/Radiance) --
