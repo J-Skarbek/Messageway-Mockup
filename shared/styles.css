@@ -1132,6 +1132,7 @@ section { padding: var(--section-pad) 0; }
 .staff-card h4 { margin-bottom: 4px; }
 .staff-card .staff-role { font-size: 0.78rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
 .staff-card p { font-size: 0.86rem; color: var(--text-muted); }
+.staff-card .staff-quote { font-style: italic; font-size: 0.82rem; color: var(--navy); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border-soft); }
 @media (max-width: 960px) { .staff-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .staff-grid { grid-template-columns: 1fr; } }
 
